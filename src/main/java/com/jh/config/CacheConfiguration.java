@@ -225,6 +225,27 @@ public class CacheConfiguration {
             registerPredefinedCache(com.jh.domain.User.class.getName() + ".authorities", new JCache<Object, Object>(
                 cacheManager.getCache(com.jh.domain.User.class.getName() + ".authorities").getAdvancedCache(), this,
                 ConfigurationAdapter.create()));
+            registerPredefinedCache(com.jh.domain.Category.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.jh.domain.Category.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.jh.domain.Category.class.getName() + ".products", new JCache<Object, Object>(
+                cacheManager.getCache(com.jh.domain.Category.class.getName() + ".products").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.jh.domain.Product.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.jh.domain.Product.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.jh.domain.Product.class.getName() + ".categories", new JCache<Object, Object>(
+                cacheManager.getCache(com.jh.domain.Product.class.getName() + ".categories").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.jh.domain.Customer.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.jh.domain.Customer.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.jh.domain.Customer.class.getName() + ".addresses", new JCache<Object, Object>(
+                cacheManager.getCache(com.jh.domain.Customer.class.getName() + ".addresses").getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
+            registerPredefinedCache(com.jh.domain.Address.class.getName(), new JCache<Object, Object>(
+                cacheManager.getCache(com.jh.domain.Address.class.getName()).getAdvancedCache(), this,
+                ConfigurationAdapter.create()));
             // jhipster-needle-infinispan-add-entry
             if (jHipsterProperties.getCache().getInfinispan().isStatsEnabled()) {
                 for (String cacheName : cacheManager.getCacheNames()) {
